@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AlumnosModelStoreContainer" CdmEntityContainer="unlamEntities">
+    <EntitySetMapping Name="Documento_Tipo">
+      <EntityTypeMapping TypeName="AlumnosModel.Documento_Tipo">
+        <MappingFragment StoreEntitySet="Documento_Tipo">
+          <ScalarProperty Name="doctypeid" ColumnName="doctypeid" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estudiante">
+      <EntityTypeMapping TypeName="AlumnosModel.Estudiante">
+        <MappingFragment StoreEntitySet="Estudiante">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="doctype" ColumnName="doctype" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="docnumber" ColumnName="docnumber" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="subjectQuantity" ColumnName="subjectQuantity" />
+          <ScalarProperty Name="numberFile" ColumnName="numberFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="AlumnosModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioLogin">
+      <EntityTypeMapping TypeName="AlumnosModel.UsuarioLogin">
+        <MappingFragment StoreEntitySet="UsuarioLogin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

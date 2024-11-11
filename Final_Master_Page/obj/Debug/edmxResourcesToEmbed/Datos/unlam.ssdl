@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlumnosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Documento_Tipo">
+    <Key>
+      <PropertyRef Name="doctypeid" />
+    </Key>
+    <Property Name="doctypeid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Estudiante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="int" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="doctype" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="100" />
+    <Property Name="docnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="created" Type="date" />
+    <Property Name="birthdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="subjectQuantity" Type="int" />
+    <Property Name="numberFile" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Alumnos.dbo.UsuarioLogin' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="UsuarioLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Contrasenia" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contrasenia" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_doctype_id">
+    <End Role="Documento_Tipo" Type="Self.Documento_Tipo" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento_Tipo">
+        <PropertyRef Name="doctypeid" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="doctype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_id">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AlumnosModelStoreContainer">
+    <EntitySet Name="Documento_Tipo" EntityType="Self.Documento_Tipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioLogin" EntityType="Self.UsuarioLogin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[UsuarioLogin].[Id] AS [Id], 
+[UsuarioLogin].[Usuario] AS [Usuario], 
+[UsuarioLogin].[Contrasenia] AS [Contrasenia]
+FROM [dbo].[UsuarioLogin] AS [UsuarioLogin]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_doctype_id" Association="Self.FK_doctype_id">
+      <End Role="Documento_Tipo" EntitySet="Documento_Tipo" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_id" Association="Self.FK_user_id">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

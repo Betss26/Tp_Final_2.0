@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlumnosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Documento_Tipo">
+    <Key>
+      <PropertyRef Name="doctypeid" />
+    </Key>
+    <Property Name="doctypeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Estudiante" Relationship="Self.FK_doctype_id" FromRole="Documento_Tipo" ToRole="Estudiante" />
+  </EntityType>
+  <EntityType Name="Estudiante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="doctype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="docnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created" Type="DateTime" Precision="0" />
+    <Property Name="birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="subjectQuantity" Type="Int32" />
+    <Property Name="numberFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Documento_Tipo" Relationship="Self.FK_doctype_id" FromRole="Estudiante" ToRole="Documento_Tipo" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_user_id" FromRole="Estudiante" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Estudiante" Relationship="Self.FK_user_id" FromRole="Usuario" ToRole="Estudiante" />
+  </EntityType>
+  <EntityType Name="UsuarioLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Contrasenia" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_doctype_id">
+    <End Role="Documento_Tipo" Type="Self.Documento_Tipo" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento_Tipo">
+        <PropertyRef Name="doctypeid" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="doctype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_id">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="unlamEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Documento_Tipo" EntityType="Self.Documento_Tipo" />
+    <EntitySet Name="Estudiante" EntityType="Self.Estudiante" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="UsuarioLogin" EntityType="Self.UsuarioLogin" />
+    <AssociationSet Name="FK_doctype_id" Association="Self.FK_doctype_id">
+      <End Role="Documento_Tipo" EntitySet="Documento_Tipo" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_id" Association="Self.FK_user_id">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Final_Master_Page.Controles {
+    public partial class Bienvenido : System.Web.UI.UserControl {
+        protected void Page_Load(object sender, EventArgs e) {
+            String usuario = Session["usuario"].ToString();
+            label_control.Text = "Bienvenido " + usuario + "  " + Convert.ToString(DateTime.Now);
+        }
+    }
+}
