@@ -1,4 +1,5 @@
-﻿using Final_Master_Page.Servicio.Estudiantes;
+﻿using Final_Master_Page.Modelo;
+using Final_Master_Page.Servicio.Estudiantes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace Final_Master_Page {
         private void LlenarGridEstudiantes(GridView grid) {
             grid.DataSource = servicioEstudiante.obtenerEstudiantes();
             grid.DataBind();
+
         }
 
         protected void grid_estudiantes_SelectedIndexChanged(object sender, EventArgs e) {
@@ -55,6 +57,36 @@ namespace Final_Master_Page {
 
         protected void grid_estudiantes_RowCancelingEdit(object sender, EventArgs e) {
 
+        }
+
+        protected void btn_buscar_estado_Click(object sender, EventArgs e)
+        {
+            List<EstudianteModelo> estudiantes = servicioEstudiante.obtenerEstudiantes();
+            grid_estudiantes.DataSource = estudiantes.Where(es => es.estado.Contains(TxtBuscarEstado.Text)).ToList();
+            grid_estudiantes.DataBind();
+
+        }
+
+        protected void btn_buscar_nombre_Click(object sender, EventArgs e)
+        {
+            
+            List<EstudianteModelo> estudiantes = servicioEstudiante.obtenerEstudiantes();
+            grid_estudiantes.DataSource = estudiantes.Where(es => es.nombre.Contains(TxtBuscarNombre.Text)).ToList();
+            grid_estudiantes.DataBind();
+        }
+        protected void btn_buscar_legajo_Click(object sender, EventArgs e)
+        {
+
+            List<EstudianteModelo> estudiantes = servicioEstudiante.obtenerEstudiantes();
+            grid_estudiantes.DataSource = estudiantes.Where(es => es.nombre.Contains(TxtBuscarLegajo.Text)).ToList();
+            grid_estudiantes.DataBind();
+        }
+
+        protected void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            LlenarGridEstudiantes(grid_estudiantes);
+            TxtBuscarEstado.Text = "";
+            TxtBuscarNombre.Text = "";
         }
 
         protected void verificarUsuario() {

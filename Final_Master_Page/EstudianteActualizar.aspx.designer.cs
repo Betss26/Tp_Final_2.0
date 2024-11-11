@@ -7,10 +7,12 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Final_Master_Page {
+namespace Final_Master_Page
+{
 
 
-    public partial class EstudianteActualizar {
+    public partial class EstudianteActualizar
+    {
 
         /// <summary>
         /// Control uc.
@@ -19,7 +21,7 @@ namespace Final_Master_Page {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UserControl uc;
+        protected global::Final_Master_Page.Controles.Bienvenido uc;
 
         /// <summary>
         /// Control lbl_mensaje_error.

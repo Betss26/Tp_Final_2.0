@@ -188,7 +188,7 @@
                      &nbsp
                  </div>
                  <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="btn_confirmar_estudiante_Click" CssClass="btn btn-primary" />
-                 <asp:Button ID="btn_volver" runat="server" Text="Volver" OnClick="btn_vovler_Click" CssClass="btn btn-primary" />
+                 <asp:Button ID="btn_volver" runat="server" Text="Volver" OnClick="btn_volver_Click" CssClass="btn btn-primary" />
              </div>
          </div>
      </div>

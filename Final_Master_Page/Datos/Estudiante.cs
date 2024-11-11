@@ -16,7 +16,7 @@ namespace Final_Master_Page.Datos
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public Nullable<int> age { get; set; }
+        public int age { get; set; }
         public int userid { get; set; }
         public string doctype { get; set; }
         public string lastname { get; set; }
@@ -26,7 +26,7 @@ namespace Final_Master_Page.Datos
         public string birthdate { get; set; }
         public string status { get; set; }
         public string address { get; set; }
-        public Nullable<int> subjectQuantity { get; set; }
+        public int subjectQuantity { get; set; }
         public string numberFile { get; set; }
     
         public virtual Documento_Tipo Documento_Tipo { get; set; }
