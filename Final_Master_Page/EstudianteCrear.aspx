@@ -11,7 +11,7 @@
      <div class="col-md">
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_nombre" runat="server" Text="nombre"></asp:Label>
+                 <asp:Label ID="lbl_nombre" runat="server" Text="Nombre"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="El nombre es obligatorio" ControlToValidate="txt_nombre" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorNombre"
                      ControlToValidate="txt_nombre"
@@ -23,7 +23,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_apellido" runat="server" Text="apellido"></asp:Label>
+                 <asp:Label ID="lbl_apellido" runat="server" Text="Apellido"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" runat="server" ErrorMessage="El apellido es obligatorio" ControlToValidate="txt_pellido" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorApellido"
                      ControlToValidate="txt_pellido"
@@ -35,7 +35,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_edad" runat="server" Text="edad"></asp:Label>
+                 <asp:Label ID="lbl_edad" runat="server" Text="Edad"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorEdad" runat="server" ErrorMessage="La edad es obligatoria" ControlToValidate="txt_edad" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorEdad"
                      ControlToValidate="txt_edad"
@@ -83,7 +83,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_contrasenia" CssClass="col-sm-2 col-form-label" runat="server" Text="contrasenia"></asp:Label>
+                 <asp:Label ID="lbl_contrasenia" CssClass="col-sm-2 col-form-label" runat="server" Text="Contraseña"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorContrasenia" runat="server" ErrorMessage="La contrasenia es obligatoria" ControlToValidate="txt_contrasenia" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorContrasenia"
                      ControlToValidate="txt_contrasenia"
@@ -97,7 +97,7 @@
      <div class="col-md">
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_telefono" CssClass="col-sm-2 col-form-label" runat="server" Text="telefono"></asp:Label>
+                 <asp:Label ID="lbl_telefono" CssClass="col-sm-2 col-form-label" runat="server" Text="Telefono"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorTelefono" runat="server" ErrorMessage="El telefono es obligatorio" ControlToValidate="txt_telefono" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorTelefono"
                      ControlToValidate="txt_telefono"
@@ -109,7 +109,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_cumpleanios" CssClass="col-sm-2 col-form-label" runat="server" Text="Fecha nacimiento"></asp:Label>
+                 <asp:Label ID="lbl_cumpleanios" CssClass="col-sm-2 col-form-label" runat="server" Text="Fecha Nacimiento"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorCumple" runat="server" ErrorMessage="El cumpleanios es obligatorio" ControlToValidate="txt_cumpleanios" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:CustomValidator runat="server"
                      ID="CustomValidatorCumpleanios"
@@ -126,7 +126,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_estado" CssClass="col-sm-2 col-form-label" runat="server" Text="estado"></asp:Label>
+                 <asp:Label ID="lbl_estado" CssClass="col-sm-2 col-form-label" runat="server" Text="Estado"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorEstado" runat="server" ErrorMessage="El estado es obligatorio" ControlToValidate="txt_estado" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
                      ControlToValidate="txt_estado"
@@ -138,7 +138,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_direccion" CssClass="col-sm-2 col-form-label" runat="server" Text="direccion"></asp:Label>
+                 <asp:Label ID="lbl_direccion" CssClass="col-sm-2 col-form-label" runat="server" Text="Direccion"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorDireccion" runat="server" ErrorMessage="La direccion es obligatorio" ControlToValidate="txt_direccion" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorDireccion"
                      ControlToValidate="txt_direccion"
@@ -150,7 +150,7 @@
          </div>
          <div class="row g-3">
              <div class="col">
-                 <asp:Label ID="lbl_cantMaterias" CssClass="col-sm-2 col-form-label" runat="server" Text="cant materias"></asp:Label>
+                 <asp:Label ID="lbl_cantMaterias" CssClass="col-sm-2 col-form-label" runat="server" Text="Cant. Materias"></asp:Label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidatorMaterias" runat="server" ErrorMessage="La cantidad es obligatoria" ControlToValidate="txt_cantMaterias" class="text-danger"></asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorCantMat"
                      ControlToValidate="txt_cantMaterias"

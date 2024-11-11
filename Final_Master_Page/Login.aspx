@@ -27,7 +27,7 @@
                         class="text-danger" />
                 </asp:RequiredFieldValidator>
                 <asp:Label ID="lbl_contrsenia" runat="server" Text=""></asp:Label>
-                <asp:TextBox ID="txt_contrasenia" CssClass="form-control" placeholder="Ingrese contrasenia" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_contrasenia" CssClass="form-control" placeholder="Ingrese contrasenia" runat="server" type="password"></asp:TextBox>
                 <div class="col">
                     &nbsp
                     &nbsp

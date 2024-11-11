@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 
 namespace Final_Master_Page.Servicio.Estudiantes {
-    public class EstudianteRepositorio {
+    public class EstudianteRepositorio : IOperacionesEstudiante<Estudiante> {
 
         OperacionesBaseDeDatos operacionesBaseDeDatos = new OperacionesBaseDeDatos();
 

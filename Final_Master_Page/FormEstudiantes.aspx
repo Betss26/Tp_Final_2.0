@@ -8,9 +8,24 @@
      <asp:Label ID="lbl_borrar_exito" class="alert alert-success" runat="server"></asp:Label>
      <div class="row g-3">
          <div class="col">
-             <asp:Button ID="btn_crear_estudiante" runat="server" Text="crear estudiante" OnClick="btn_crear_estudiante_Click" CssClass="btn btn-primary" />
+             <asp:Button ID="btn_crear_estudiante" runat="server" Text="crear estudiante" OnClick="btn_crear_estudiante_Click" CssClass="btn btn-success" />
          </div>
      </div>
+    <div class="row g-3">
+        <div class="col">
+            
+            
+            <asp:TextBox ID="TxtBuscarEstado" runat="server"></asp:TextBox>
+            <asp:Button ID="BtnBuscarEstado" runat="server" Text="Buscar Estado" OnClick="btn_buscar_estado_Click" CssClass="btn btn-primary" /> 
+          
+            <asp:TextBox ID="TxtBuscarNombre" runat="server"></asp:TextBox>
+              <asp:Button ID="BtnBuscarNombre" runat="server" Text="Buscar Nombre" OnClick="btn_buscar_nombre_Click" CssClass="btn btn-primary" />
+            <asp:TextBox ID="TxtBuscarLegajo" runat="server"></asp:TextBox>
+            <asp:Button ID="BtnBuscarLegajo" runat="server" Text="Buscar Legajo" OnClick="btn_buscar_legajo_Click" CssClass="btn btn-primary" />
+            <asp:Button ID="BtnLimpiar" runat="server" Text="Limpiar Filtro" OnClick="btn_limpiar_Click" CssClass="btn btn-warning"/>
+
+        </div>
+    </div>
      <div class="col">
          <asp:GridView ID="grid_estudiantes" runat="server" AutoGenerateColumns="False" DataKeyNames="id,nombreUsuario" CssClass="table table-striped" OnRowDeleting="grid_estudiantes_RowDeleting" OnSelectedIndexChanged="grid_estudiantes_SelectedIndexChanged" OnRowUpdating="grid_estudiantes_RowUpdating">
              <Columns>

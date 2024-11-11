@@ -80,9 +80,11 @@ namespace Final_Master_Page {
 
         protected void edad_ServerValidacion(object source, ServerValidateEventArgs args) {
             TimeSpan edad = DateTime.Today - DateTime.Parse(args.Value);
-            int anios = Convert.ToInt32(edad.TotalDays / 365.25);
+            // int anios = Convert.ToInt32(edad.TotalDays / 365.25);
 
-            args.IsValid = anios == Convert.ToInt32(txt_edad.Text);
+            double anios = edad.TotalDays / 365.25;
+            double aux = Math.Floor(anios);
+            args.IsValid = aux == Convert.ToInt32(txt_edad.Text);
         }
 
         private void verificarUsuario() {

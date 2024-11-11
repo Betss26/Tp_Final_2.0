@@ -69,7 +69,7 @@ namespace Final_Master_Page {
             }
         }
 
-        protected void btn_vovler_Click(object sender, EventArgs e) {
+        protected void btn_volver_Click(object sender, EventArgs e) {
             Response.Redirect("FormEstudiantes.aspx");
         }
 
@@ -85,7 +85,7 @@ namespace Final_Master_Page {
                     txt_usuario.Text = estudiante.nombreUsuario;
                     txt_contrasenia.Text = estudiante.contrasenia;
                     txt_telefono.Text = estudiante.telefono;
-                    txt_cumpleanios.Text = Convert.ToString(estudiante.fechaNacimiento);
+                    txt_cumpleanios.Text = Convert.ToDateTime(estudiante.fechaNacimiento).ToString("yyyy-MM-dd");
                     txt_estado.Text = estudiante.estado;
                     txt_direccion.Text = estudiante.direccion;
                     txt_cantMaterias.Text = estudiante.cantidadMaterias.ToString();
@@ -119,10 +119,12 @@ namespace Final_Master_Page {
         }
 
         protected void edad_ServerValidacion(object source, ServerValidateEventArgs args) {
-            DateTime fechaActual = DateTime.Now;
-            int añosTranscurridos = fechaActual.Year - DateTime.Parse(args.Value).Year;
+            TimeSpan edad = DateTime.Today - DateTime.Parse(args.Value);
+            //int añosTranscurridos = fechaActual.Year - DateTime.Parse(args.Value).Year;
 
-            args.IsValid = añosTranscurridos == Convert.ToInt32(txt_edad.Text);
+            double anios = edad.TotalDays / 365.25;
+            double aux = Math.Floor(anios);
+            args.IsValid = aux == Convert.ToInt32(txt_edad.Text);
         }
 
         private void verificarUsuario() {
