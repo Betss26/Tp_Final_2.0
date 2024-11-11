@@ -74,3 +74,7 @@ C:\Users\Betsabè\source\repos\Tp_Final\Final_Master_Page\obj\Debug\Final_Master
 C:\Users\Betsabè\source\repos\Tp_Final\Final_Master_Page\obj\Debug\Final_Ma.3B8F2A94.Up2Date
 C:\Users\Betsabè\source\repos\Tp_Final\Final_Master_Page\obj\Debug\Final_Master_Page.dll
 C:\Users\Betsabè\source\repos\Tp_Final\Final_Master_Page\obj\Debug\Final_Master_Page.pdb
+D:\unlam\TPFinal12\Final_Master_Page\obj\Debug\Final_Master_Page.csproj.AssemblyReference.cache
+D:\unlam\TPFinal12\Final_Master_Page\obj\Debug\Final_Master_Page.csproj.CoreCompileInputs.cache
+D:\unlam\TPFinal12\Final_Master_Page\obj\Debug\Final_Master_Page.dll
+D:\unlam\TPFinal12\Final_Master_Page\obj\Debug\Final_Master_Page.pdb
